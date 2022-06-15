@@ -15,19 +15,14 @@ function App() {
     let [switchOn,setSwitchOn] = useState<boolean>(false);
 
     return <div className="App">
-
         <PageTitle title="This is APP component"/>
-
-        <Accordion titleValue="Menu" collapsed={accordionCollapsed} onChange={() => {setAccordionCollapsed(!accordionCollapsed)}}/>
-
+        <Accordion titleValue="Menu"
+                   collapsed={accordionCollapsed}
+                   onChange={() => {setAccordionCollapsed(!accordionCollapsed)}}/>
         <OnOff on={switchOn} onChange={ (on) => {setSwitchOn(on)} }/>
-
         <UncontrolledOnOff onClick={setSwitchOn}/>  {switchOn.toString()}
-
         <UncontrolledAccordion titleValue="Users"/>
-
         <Rating value={ratingValue} onClick={setRatingValue}/>
-
         <UncontrolledRating onChange={x=> x} />
 
     </div>
